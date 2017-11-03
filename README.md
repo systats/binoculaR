@@ -21,8 +21,7 @@ Download package from github and proceed with the chunk.
 # devtools::install_github("systats/binoculaR", force = T)
 selected <- binoculaR::binoculaR(ess)
 ```
-![](screen.png){width="70%"}
-
+![](screen.png)
 
 After Selecting the Rows the specific set will be returned as `selected`.
 
