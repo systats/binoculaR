@@ -34,9 +34,22 @@ binoculaR <- function(data) {
 
   ui <- miniPage(
     gadgetTitleBar("binoculaR (Roth & Votta)"),
-    miniContentPanel(
-      DT::dataTableOutput("tab")
-    )
+      miniTabstripPanel(
+        miniTabPanel(
+          "Full Dataset", 
+          icon = icon("table"),
+          miniContentPanel(
+            DT::dataTableOutput("tab")
+          )
+        ),
+        miniTabPanel(
+          "Selected", 
+          icon = icon("sliders"),
+          miniContentPanel(
+            DT::dataTableOutput("selected")
+          )
+        )
+      )
   )
 
   server <- function(input, output, session) {
@@ -46,6 +59,11 @@ binoculaR <- function(data) {
     output$tab <- DT::renderDataTable({
       return(dat())
     })
+    
+    output$selected <- DT::renderDataTable({
+      req(input$tab_rows_selected)
+      return(dat()[input$tab_rows_selected, ])
+    })
 
     observeEvent(input$done, {
       print(input$tab_rows_selected)
@@ -54,5 +72,5 @@ binoculaR <- function(data) {
     })
   }
 
-  runGadget(ui, server, viewer = dialogViewer(dialogName = "binoculaR", width = 900, height = 600))
+  runGadget(ui, server, viewer = dialogViewer(dialogName = "binoculaR", width = 900, height = 800))
 }
