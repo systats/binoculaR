@@ -24,7 +24,7 @@ var_names <- function(data, keyword = "") {
 }
 
 
-searcher <- function(data) {
+binoculaR <- function(data) {
 
   ui <- miniPage(
     gadgetTitleBar("searcher"),
@@ -41,5 +41,5 @@ searcher <- function(data) {
     })
   }
 
-  runGadget(ui, server, viewer = dialogViewer("ggbrush", width = 900, height = 600))
+  runGadget(ui, server, viewer = dialogViewer("binoculaR", width = 900, height = 600))
 }
