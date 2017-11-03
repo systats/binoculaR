@@ -33,7 +33,7 @@ binoculaR <- function(data) {
 
 
   ui <- miniPage(
-    gadgetTitleBar("searcher"),
+    gadgetTitleBar("binoculaR (Roth & Votta)"),
     miniContentPanel(
       DT::dataTableOutput("tab")
     )
@@ -46,5 +46,5 @@ binoculaR <- function(data) {
     })
   }
 
-  runGadget(ui, server, viewer = dialogViewer("binoculaR", width = 900, height = 600))
+  runGadget(ui, server, viewer = dialogViewer(dialogName = "binoculaR", width = 900, height = 600))
 }
