@@ -1,0 +1,4 @@
+Name: binoculaR
+Description: Searcher for Variable Names in SPSS Data
+Binding: insertInAddin
+Interactive: false
