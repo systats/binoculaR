@@ -1,4 +1,4 @@
 Name: binoculaR
 Description: Searcher for Variable Names in SPSS Data
 Binding: binoculaR
-Interactive: false
+Interactive: true

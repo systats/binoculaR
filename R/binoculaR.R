@@ -2,6 +2,12 @@
 #'
 #' @export
 
+library(shiny)
+library(miniUI)
+library(ggplot2)
+library(labelled)
+library(magrittr)
+
 var_names <- function(data, keyword = "") {
   keyword <- ifelse(keyword %in% "all", "", keyword)
   #if 'all' turn into void, else copy keyword
