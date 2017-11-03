@@ -25,11 +25,12 @@ var_names <- function(data, keyword = "") {
 
 
 binoculaR <- function(data) {
+
   library(shiny)
   library(miniUI)
-  library(ggplot2)
   library(labelled)
   library(magrittr)
+  library(dplyr)
 
   ui <- miniPage(
     gadgetTitleBar("searcher"),
