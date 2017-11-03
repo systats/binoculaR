@@ -2,7 +2,6 @@
 
 This is a convienece gadget that returns the Variable Names of a Labeled SPSS dataset. 
 
-# Data
 
 ## Loading 
 
@@ -22,6 +21,8 @@ Download package from github and proceed with the chunk.
 # devtools::install_github("systats/binoculaR", force = T)
 selected <- binoculaR::binoculaR(ess)
 ```
+![](screen.png){width="70%"}
+
 
 After Selecting the Rows the specific set will be returned as `selected`.
 
