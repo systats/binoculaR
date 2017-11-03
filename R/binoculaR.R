@@ -2,12 +2,6 @@
 #'
 #' @export
 
-library(shiny)
-library(miniUI)
-library(ggplot2)
-library(labelled)
-library(magrittr)
-
 var_names <- function(data, keyword = "") {
   keyword <- ifelse(keyword %in% "all", "", keyword)
   #if 'all' turn into void, else copy keyword
@@ -31,6 +25,11 @@ var_names <- function(data, keyword = "") {
 
 
 binoculaR <- function(data) {
+  library(shiny)
+  library(miniUI)
+  library(ggplot2)
+  library(labelled)
+  library(magrittr)
 
   ui <- miniPage(
     gadgetTitleBar("searcher"),
@@ -40,7 +39,6 @@ binoculaR <- function(data) {
   )
 
   server <- function(input, output, session) {
-
     # Render the plot
     output$tab <- DT::renderDataTable({
       return(var_names(data, ""))
