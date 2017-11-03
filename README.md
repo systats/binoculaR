@@ -31,7 +31,7 @@ The dataframe `selected` contains all relevant variable informations. The Variab
 
 ```r
 ess_sub <- ess %>%
-  select(selected)
+  select(selected$index)
 
 binoculaR::binoculaR(ess_sub)
 ```
