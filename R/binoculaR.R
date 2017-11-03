@@ -9,13 +9,14 @@ binoculaR <- function(data) {
   library(labelled)
   library(magrittr)
   library(dplyr)
+  library(DT)
 
   var_names <- function(data, keyword = "") {
     keyword <- ifelse(keyword %in% "all", "", keyword)
     #if 'all' turn into void, else copy keyword
     lablist <-  data %>%
       var_label() %>% # extract variable labels
-      bind_rows() %>% # binding list elements as dataframe
+      dplyr::bind_rows() %>% # binding list elements as dataframe
       t() # transpose dataframe
     name_pos <- stringr::str_detect(tolower(lablist[, 1]), tolower(keyword))
     # get position of string

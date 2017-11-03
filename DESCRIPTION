@@ -11,6 +11,7 @@ Imports:
     miniUI,
     rstudioapi,
     labelled,
-    magrittr
+    magrittr,
+    DT
 	
 
