@@ -27,7 +27,7 @@ After Selecting the Rows the specific set will be returned as `selected`.
 
 ## Subsetting
 
-This vector then can be used to make a subset. Finally the *dynamic* codebook can be reloaded as needed. 
+The dataframe `selected` contains all relevant variable informations. The Variable Index can be used to select the reviewed variables. Finally the *dynamic* codebook can be reloaded as needed. 
 
 ```r
 ess_sub <- ess %>%

@@ -41,13 +41,15 @@ binoculaR <- function(data) {
 
   server <- function(input, output, session) {
 
+    dat <- reactive({var_names(data, "")})
+
     output$tab <- DT::renderDataTable({
-      return(var_names(data, ""))
+      return(dat())
     })
 
     observeEvent(input$done, {
       print(input$tab_rows_selected)
-      returnValue <- input$tab_rows_selected
+      returnValue <- data.frame(dat()[input$tab_rows_selected,], index = input$tab_rows_selected)
       stopApp(returnValue)
     })
   }
