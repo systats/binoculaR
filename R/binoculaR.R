@@ -40,9 +40,15 @@ binoculaR <- function(data) {
   )
 
   server <- function(input, output, session) {
-    # Render the plot
+
     output$tab <- DT::renderDataTable({
       return(var_names(data, ""))
+    })
+
+    observeEvent(input$done, {
+      print(input$tab_rows_selected)
+      returnValue <- input$tab_rows_selected
+      stopApp(returnValue)
     })
   }
 
