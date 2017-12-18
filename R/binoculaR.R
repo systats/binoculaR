@@ -28,7 +28,7 @@ binoculaR <- function(data) {
       cat(paste0("####---- Nice! You found ", nrow(dat) , " variables! ----#### \n \n "))
       return(dat)
     } else{
-      cat("Variable Name not found. Try again, Stupid!")
+      cat("Variable Name not found. Try again with a different name!")
     }
   }
 
