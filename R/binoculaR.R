@@ -10,6 +10,7 @@ binoculaR <- function(data) {
   library(magrittr)
   library(dplyr)
   library(DT)
+  library(sjPlot)
 
   remove_nulls  <-  function(list){   # delele null/empty entries in a list
     list[unlist(lapply(list, length) != 0)]
@@ -57,6 +58,13 @@ binoculaR <- function(data) {
           miniContentPanel(
             DT::dataTableOutput("selected")
           )
+        ),
+        miniTabPanel(
+          "Levels",
+          icon = icon("braille"),
+          miniContentPanel(
+            shiny::htmlOutput("levels", width = "100%")
+          )
         )
       )
   )
@@ -64,6 +72,7 @@ binoculaR <- function(data) {
   server <- function(input, output, session) {
 
     dat <- reactive({var_names(data, "")})
+    full_data <- reactive({ data })
 
     output$tab <- DT::renderDataTable({
       return(dat())
@@ -73,6 +82,19 @@ binoculaR <- function(data) {
       req(input$tab_rows_selected)
       return(dat()[input$tab_rows_selected, ])
     })
+
+    output$levels <- renderUI({
+      req(input$tab_rows_selected)
+      nn <- sjPlot::view_df(
+        full_data()[, input$tab_rows_selected],
+        #show.frq = TRUE,
+        show.prc = TRUE,
+        show.na = T,
+        use.viewer = F
+      )
+      HTML(nn$knitr)
+    })
+
 
     observeEvent(input$done, {
       print(input$tab_rows_selected)
