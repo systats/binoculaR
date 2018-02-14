@@ -39,9 +39,6 @@ binoculaR <- function(data) {
   }
 
 
-
-
-
   ui <- miniPage(
     gadgetTitleBar("binoculaR (Roth & Votta)"),
       miniTabstripPanel(
