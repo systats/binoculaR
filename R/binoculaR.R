@@ -40,7 +40,7 @@ binoculaR <- function(data) {
 
 
   ui <- miniPage(
-    gadgetTitleBar("binoculaR (Roth & Votta)"),
+    gadgetTitleBar("binoculaR"),
       miniTabstripPanel(
         miniTabPanel(
           "Full Dataset",
