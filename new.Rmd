@@ -1,0 +1,26 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# library(shiny)
+# library(miniUI)
+# library(labelled)
+# library(magrittr)
+# library(dplyr)
+# library(DT)
+# library(sjPlot)
+# install.packages("haven")
+library(haven)
+ess <- read_spss("https://github.com/systats/binoculaR/raw/master/data/ess_round8.sav")
+
+# devtools::install_github("systats/binoculaR", force = T)
+binoculaR(ess, show.frq = T, show.na = F)
+```
+
+```{r}
+ess %>%
+  dplyr::select(essround, proddate, netusoft, netustm)
+```
+

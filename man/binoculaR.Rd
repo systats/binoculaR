@@ -2,10 +2,10 @@
 % Please edit documentation in R/binoculaR.R
 \name{binoculaR}
 \alias{binoculaR}
-\title{Find and SPSS variable names}
+\title{Inspect SPSS dataset with little shiny app}
 \usage{
-binoculaR(data)
+binoculaR(data, ...)
 }
 \description{
-Find and SPSS variable names
+Inspect SPSS dataset with little shiny app
 }

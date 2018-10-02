@@ -1,6 +1,6 @@
 # binoculaR
 
-This is a convienece gadget that returns the Variable Names of a Labeled SPSS dataset. 
+This is a convienece gadget that returns the variable names of a labelled SPSS dataset. 
 
 
 ## Loading 
@@ -23,11 +23,11 @@ selected <- binoculaR::binoculaR(ess)
 ```
 ![](screen.png)
 
-After Selecting the Rows the specific set will be returned as `selected`.
+After selecting the rows the specific set will be returned as `selected`.
 
 ## Subsetting
 
-The dataframe `selected` contains all relevant variable information. The Variable Index can be used to select the reviewed variables. Finally the *dynamic* codebook can be reloaded as needed. 
+The dataframe `selected` contains all relevant variable information. The variable index (`selected`) can be used to select the reviewed variables. Finally the *dynamic* codebook can be reloaded as needed. 
 
 ```r
 ess_sub <- ess %>%
