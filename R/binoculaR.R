@@ -37,6 +37,16 @@ var_names <- function(data, keyword = "") {
 
 binoculaR <- function(data, ...) {
 
+  ### seems necessary
+  library(shiny)
+  library(miniUI)
+  library(labelled)
+  library(magrittr)
+  library(dplyr)
+  library(DT)
+  library(sjPlot)
+  library(lazyeval)
+
   ui <- miniPage(
     gadgetTitleBar("binoculaR"),
       miniTabstripPanel(
