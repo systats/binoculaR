@@ -55,5 +55,5 @@ Copy and Paste the code from the `Code` section into R and go on with your analy
 
 ![](images/SPSS_binocular.jpg)
 
-My friend [Fabio](twitter.com/favstats) was teaching SPSS and R to graduate students. In SPSS, you have the possiblity to click on the `Binocular` icon to search for variables, which is pretty convenient. Unfortunately, Fabio lamented, one can't do that easily in R. Well, that day we sat down together and created a gadget that would do exactly and that is why this gadget is called... `binoculaR`.
+My friend [Fabio](twitter.com/favstats) was teaching SPSS and R to graduate students. In SPSS, you have the possiblity to click on the `Binocular` icon to search for variables, which is pretty convenient. Unfortunately, Fabio lamented, one can't do that easily in R. Well, that day we sat down together and created a gadget that would do exactly that and this is why the gadget is called... `binoculaR`.
 
